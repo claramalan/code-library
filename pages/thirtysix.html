@@ -3,72 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Outline v.2</title>
-    <link rel="stylesheet" href="styles.css"> 
+    <title>displacement</title>
+    <link rel="stylesheet" href="../css/styles.css">
     <style>
         body {
             font-family: 'Harber-Light', sans-serif;
-            margin: 20px;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden; /* Prevent scrolling */
         }
-        .content {
-            max-width: 800px;
-            margin: 0 auto;
+        .container {
+            position: relative;
+            width: 60%; /* Adjust as needed */
+            max-width: 600px; /* Adjust as needed */
+            height: auto; /* Maintain aspect ratio */
+            margin: auto;
         }
-        .image {
-            width: 100%;
+        .container img {
+            width: 90%;
             height: auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-        .code-block {
-            text-align: left;
-            padding: 10px;
-            border-radius: 5px;
-            overflow-x: auto;
-            margin: 20px 0;
-            font-family: 'Courier New', Courier, monospace;
+        .layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .layer img {
+            position: absolute;
+            width: 70%; /* Make overlay images smaller */
+            height: auto;
+            display: none; /* Hide all images by default */
+        }
+        .layer img.active {
+            display: block; /* Show the active image */
         }
     </style>
 </head>
 <body>
-    <div class="content">
-        <h1>Outline v.2</h1>
-
-        <pre class="code-block"><code>
-            import cv2
-            import numpy as np
-            
-            def bokeh_effect(image_path, output_path, radius=21, threshold=50):
-                image = cv2.imread(image_path)
-                gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-                
-                # Detect edges using Canny
-                edges = cv2.Canny(gray, threshold, threshold * 2)
-                
-                # Create a mask of the edges
-                mask = cv2.dilate(edges, None, iterations=2)
-                mask = cv2.GaussianBlur(mask, (radius, radius), 0)
-                
-                # Invert mask
-                mask_inv = cv2.bitwise_not(mask)
-                
-                # Blur the entire image
-                blurred = cv2.GaussianBlur(image, (radius, radius), 0)
-                
-                # Combine the original image and the blurred image using the mask
-                bokeh_image = cv2.bitwise_and(image, image, mask=mask) + cv2.bitwise_and(blurred, blurred, mask=mask_inv)
-                
-                cv2.imwrite(output_path, bokeh_image)
-            
-            # Example usage
-            input_image_path = "/Users/claramalan/Desktop/antenna Try out.png"
-            output_image_path = "/Users/claramalan/Desktop/bokehantenna Try out.png"
-            bokeh_effect(input_image_path, output_image_path, radius=21, threshold=50)
-            
-            
-            
-        </code></pre>
-
-        <p><a href="index.html">Back to the main page</a></p>
+    <!-- Container for Images -->
+    <div class="container" onclick="toggleLayer()">
+        <img src="../images/images/pages/image33/image34motionblur.png" alt="Image 1" class="base active">
+        <div class="layer">
+            <img src="../images/images/pages/image29/IMG_459021.JPG" alt="Image 2">
+            <img src="../images/images/pages/image33/motionblurIMG_459021.JPG" alt="Image 3">
+        </div>
     </div>
+
+    <script>
+        let currentIndex = 0;
+
+        function toggleLayer() {
+            const container = document.querySelector('.container');
+            const baseImage = container.querySelector('.base');
+            const images = container.querySelectorAll('.layer img');
+
+            if (currentIndex === 0) {
+                baseImage.classList.remove('active');
+            } else {
+                images[currentIndex - 1].classList.remove('active');
+            }
+
+            currentIndex = (currentIndex + 1) % (images.length + 1);
+
+            if (currentIndex === 0) {
+                baseImage.classList.add('active');
+            } else {
+                images[currentIndex - 1].classList.add('active');
+            }
+        }
+    </script>
 </body>
 </html>
