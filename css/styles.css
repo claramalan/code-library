@@ -24,6 +24,11 @@
     font-style: normal;
     font-display: swap;
 }
+body {
+    font-family: 'Harber-Light', Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
 
 /* Reset some default styles */
 * {
