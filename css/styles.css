@@ -19,7 +19,8 @@
 @font-face {
     font-family: 'Harber-Light';
     src: url('../fonts/Harber-Light.woff2') format('woff2'),
-         url('../fonts/Harber-Light.woff') format('woff');
+         url('../fonts/Harber-Light.woff') format('woff'),
+         url('../fonts/Harber-Light.ttf') format('truetype'); /* Include this if needed */
     font-weight: normal;
     font-style: normal;
     font-display: swap;
