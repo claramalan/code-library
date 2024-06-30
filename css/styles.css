@@ -14,20 +14,20 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Harber-Light';
+    src: url('fonts/Harber-Light.woff2') format('woff2'),
+         url('fonts/Harber-Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* Reset some default styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-.intro-text {
-    font-family: 'Harber-Light', sans-serif;
-    font-size: 0.8rem;
-    margin-bottom: 20px;
-    line-height: 1.6;
-    text-align: justify;
-}
-
 
 body {
     display: flex;
@@ -36,9 +36,11 @@ body {
     min-height: 100vh;
     margin: 0;
     text-align: center;
-    font-family: 'Harber-Light', sans-serif;
+    font-family: 'Harber-Light', Arial, sans-serif;
     font-size: 1rem;
     line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 header, footer {
@@ -137,6 +139,7 @@ main {
 .special-link-container:hover .hover-image {
     display: block;
 }
+
 .paragraph-separator {
     margin-bottom: 50px; /* Adjust the value to control spacing */
 }
@@ -175,3 +178,4 @@ main {
         top: 20px;
     }
 }
+
