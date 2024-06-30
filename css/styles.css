@@ -1,0 +1,177 @@
+@font-face {
+    font-family: 'ARKES-DenseLight';
+    src: url('fonts/ARKES-DenseLight.woff2') format('woff2'),
+         url('fonts/ARKES-DenseLight.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Resistance-Regular';
+    src: url('fonts/Resistance-Regular.woff2') format('woff2'),
+         url('fonts/Resistance-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.intro-text {
+    font-family: 'Harber-Light', sans-serif;
+    font-size: 0.8rem;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 100vh;
+    margin: 0;
+    text-align: center;
+    font-family: 'Harber-Light', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+header, footer {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+main {
+    display: flex;
+    width: 100%;
+    flex-grow: 1;
+}
+
+.special-links-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 20%;
+    padding: 20px;
+}
+
+.right-text {
+    width: 10cm;
+    margin-left: auto;
+    padding: 20px;
+    text-align: justify;
+}
+
+.title {
+    font-family: 'Harber-Light', sans-serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.body-text {
+    font-family: 'Harber-Light';
+    margin: 20px auto;
+    padding: 20px;
+    text-align: justify;
+}
+
+.special-text, .special-text-2 {
+    font-family: 'Harber-Light';
+    font-size: 1rem;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    margin: 10px 0;
+    text-align: justify;
+}
+
+.special-text:hover, .special-text-2:hover {
+    color: brown;
+}
+
+.special-symbol-1 {
+    font-family: 'ARKES-DenseLight';
+    font-size: 2rem;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.special-link {
+    color: brown;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: left;
+    display: block;
+    width: 100%;
+}
+
+.special-link:hover {
+    color: black;
+}
+
+.hover-image {
+    display: none;
+    position: fixed;
+    width: 300px;
+    z-index: 1000;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.special-link-container:hover .hover-image {
+    display: block;
+}
+.paragraph-separator {
+    margin-bottom: 50px; /* Adjust the value to control spacing */
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    header, footer {
+        padding: 10px 5px;
+        font-size: 0.8rem;
+    }
+
+    main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .special-links-container, .right-text {
+        width: 90%;
+        text-align: right;
+    }
+
+    .title {
+        font-size: 1rem;
+    }
+
+    .special-text, .special-text-2 {
+        font-size: 1rem;
+    }
+
+    .special-link {
+        font-size: 0.8rem;
+    }
+
+    .hover-image {
+        width: 80%;
+        top: 20px;
+    }
+}

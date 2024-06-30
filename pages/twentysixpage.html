@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> displacement</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        body {
+            font-family: 'Harber-Light', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden; /* Prevent scrolling */
+        }
+        .container {
+            position: relative;
+            width: 60%; /* Adjust as needed */
+            max-width: 600px; /* Adjust as needed */
+            height: auto; /* Maintain aspect ratio */
+            margin: auto;
+        }
+        .container img {
+            width: 90%;
+            height: auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .layer img {
+            position: absolute;
+            width: 70%; /* Make overlay images smaller */
+            height: auto;
+            display: none; /* Hide all images by default */
+        }
+        .layer img.active {
+            display: block; /* Show the active image */
+        }
+    </style>
+</head>
+<body>
+    <!-- Container for Images -->
+    <div class="container" onclick="toggleLayer()">
+        <img src="../images/images/pages/image36/image36displacement.png" alt="Image 1" class="base active">
+        <div class="layer">
+            <img src="../images/images/pages/image29/IMG_459021.JPG" alt="Image 2">
+            <img src="../images/images/pages/image36/mapapixelateIMG_459021.JPG" alt="Image 3">
+        </div>
+    </div>
+
+    <script>
+        let currentIndex = 0;
+
+        function toggleLayer() {
+            const container = document.querySelector('.container');
+            const baseImage = container.querySelector('.base');
+            const images = container.querySelectorAll('.layer img');
+
+            if (currentIndex === 0) {
+                baseImage.classList.remove('active');
+            } else {
+                images[currentIndex - 1].classList.remove('active');
+            }
+
+            currentIndex = (currentIndex + 1) % (images.length + 1);
+
+            if (currentIndex === 0) {
+                baseImage.classList.add('active');
+            } else {
+                images[currentIndex - 1].classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
