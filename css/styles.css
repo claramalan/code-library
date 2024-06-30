@@ -1,25 +1,28 @@
 @font-face {
     font-family: 'ARKES-DenseLight';
-    src: url('fonts/ARKES-DenseLight.woff2') format('woff2'),
-         url('fonts/ARKES-DenseLight.woff') format('woff');
+    src: url('/fonts/ARKES-DenseLight.woff2') format('woff2'),
+         url('/fonts/ARKES-DenseLight.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Resistance-Regular';
-    src: url('fonts/Resistance-Regular.woff2') format('woff2'),
-         url('fonts/Resistance-Regular.woff') format('woff');
+    src: url('/fonts/Resistance-Regular.woff2') format('woff2'),
+         url('/fonts/Resistance-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Harber-Light';
-    src: url('fonts/Harber-Light.woff2') format('woff2'),
-         url('fonts/Harber-Light.woff') format('woff');
+    src: url('/fonts/Harber-Light.woff2') format('woff2'),
+         url('/fonts/Harber-Light.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 
 /* Reset some default styles */
