@@ -1,15 +1,18 @@
 @font-face {
     font-family: 'Harber-Light';
-    src: url('../fonts/Harber-Light.woff2') format('woff2'),
-         url('../fonts/Harber-Light.woff') format('woff');
+    src: url('/fonts/Harber-Light.woff2') format('woff2'),
+         url('/fonts/Harber-Light.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
+
 body {
-    font-family: 'Harber-Light', Arial, sans-serif;
+    font-family: 'Arial', sans-serif; /* Set Arial as the default font */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-size: 1rem;
+    line-height: 1.6;
 }
 
 /* Reset some default styles */
@@ -17,20 +20,6 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    min-height: 100vh;
-    margin: 0;
-    text-align: center;
-    font-family: 'Harber-Light', Arial, sans-serif;
-    font-size: 1rem;
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
 }
 
 header, footer {
@@ -43,7 +32,6 @@ header, footer {
 main {
     display: flex;
     width: 100%;
-    flex-grow: 1;
 }
 
 .special-links-container {
@@ -62,7 +50,7 @@ main {
 }
 
 .title {
-    font-family: 'Harber-Light', sans-serif;
+    font-family: 'Arial', sans-serif; /* Updated to use Arial */
     font-size: 2.5rem;
     font-weight: bold;
     margin-top: 20px;
@@ -70,18 +58,17 @@ main {
 }
 
 .body-text {
-    font-family: 'Harber-Light';
+    font-family: 'Arial', sans-serif; /* Updated to use Arial */
     margin: 20px auto;
     padding: 20px;
     text-align: justify;
 }
 
 .special-text, .special-text-2 {
-    font-family: 'Harber-Light';
+    font-family: 'Arial', sans-serif; /* Updated to use Arial */
     font-size: 1rem;
     transition: color 0.3s ease, background-color 0.3s ease;
     margin: 10px 0;
-    text-align: justify;
 }
 
 .special-text:hover, .special-text-2:hover {
@@ -89,7 +76,7 @@ main {
 }
 
 .special-symbol-1 {
-    font-family: 'ARKES-DenseLight';
+    font-family: 'Arial', sans-serif; /* Updated to use Arial */
     font-size: 2rem;
     margin: 20px 0;
     text-align: center;
@@ -100,9 +87,9 @@ main {
 }
 
 .special-link {
+    font-family: 'Arial', sans-serif; /* Updated to use Arial */
     color: brown;
     font-size: 1rem;
-    font-weight: bold;
     text-decoration: none;
     transition: color 0.3s ease;
     padding: 5px;
